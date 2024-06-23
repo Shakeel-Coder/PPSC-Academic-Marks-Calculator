@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: cadetblue;
+}
+h1{
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+#card1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: large;
+    font-weight: bold;
+    background-color: whitesmoke;
+}
+#card2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background-color: whitesmoke;
+}
+input{
+    width: 100px;
+    height: 50px;
+    border-radius: 15px 0px;
+}
+button{
+    width: 100px;
+    height: 50px;
+    border-radius: 15px 0px;
+    background-color: cadetblue;
+    color: white;
+    font-weight: bold;
+}
+hr{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    border: 1px solid black;
+}
+.margbo{
+    margin-bottom: 90px;
+}

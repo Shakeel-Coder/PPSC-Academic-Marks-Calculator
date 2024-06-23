@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>PPSC Academic Marks Calculator</title>
+</head>
+<body>
+    <h1>PPSC Academic Marks Calculator</h1>
+    <section id="card1">
+        
+     <h2>For Smester Exam System</h2>
+    <label for="matricMarks">Matriculation Marks Obtained:</label>
+    <input type="number" id="matricMarks"><br><br>
+
+    <label for="matricTotalMarks">Matriculation Total Marks:</label>
+    <input type="number" id="matricTotalMarks"><br><br>
+
+    <label for="interMarks">Intermediate Marks Obtained:</label>
+    <input type="number" id="interMarks"><br><br>
+
+    <label for="interTotalMarks">Intermediate Total Marks:</label>
+    <input type="number" id="interTotalMarks"><br><br>
+
+    <label for="bachelorCGPA">Bachelor's Degree CGPA:</label>
+    <input type="number" step="0.01" id="bachelorCGPA"><br><br>
+
+    <label for="bachelorMaxCGPA">Bachelor's Degree Maximum CGPA:</label>
+    <input type="number" step="0.01" id="bachelorMaxCGPA"><br><br>
+
+    <button onclick="calculatePPSCMarksSmester()">Calculate</button>
+
+    <h2 class="margbo">Total PPSC Marks: <span id="totalPPSCMarks"></span></h2>
+    </section>
+
+     <hr>
+    
+      <section id="card2">
+        <h2>For Annual Exam System</h2>
+        <label for="matricMarks2">Matriculation Marks Obtained:</label>
+        <input type="number" id="matricMarks2"><br><br>
+    
+        <label for="matricTotalMarks2">Matriculation Total Marks:</label>
+        <input type="number" id="matricTotalMarks2"><br><br>
+    
+        <label for="interMarks2">Intermediate Marks Obtained:</label>
+        <input type="number" id="interMarks2"><br><br>
+    
+        <label for="interTotalMarks2">Intermediate Total Marks:</label>
+        <input type="number" id="interTotalMarks2"><br><br>
+    
+        <label for="bscmarks">BSc Marks Obtained:</label>
+        <input type="number" id="bscmarks"><br><br>
+    
+        <label for="bsctotalmarks">BSc Total Marks:</label>
+        <input type="number" id="bsctotalmarks"><br><br>
+
+        <label for="mamarks">M.A Marks Obtained:</label>
+        <input type="number" id="mamarks"><br><br>
+    
+        <label for="matotalmarks">M.A Total Marks:</label>
+        <input type="number" id="matotalmarks"><br><br>
+    
+        <button onclick="calculatePPSCMarksAnnual()">Calculate</button>
+    
+        <h2 class="margbo">Total PPSC Marks: <span id="totalPPSCMarks2"></span></h2>
+        
+      </section>
+
+      <hr>
+
+    <script>
+        function calculatePPSCMarksSmester() {
+            // Get values from input fields
+            let matricMarks = parseFloat(document.getElementById('matricMarks').value);
+            let matricTotalMarks = parseFloat(document.getElementById('matricTotalMarks').value);
+            let interMarks = parseFloat(document.getElementById('interMarks').value);
+            let interTotalMarks = parseFloat(document.getElementById('interTotalMarks').value);
+            let bachelorCGPA = parseFloat(document.getElementById('bachelorCGPA').value);
+            let bachelorMaxCGPA = parseFloat(document.getElementById('bachelorMaxCGPA').value);
+
+            // Calculate percentage marks
+            let matricPPSCMarks = (matricMarks / matricTotalMarks) * 5;
+            let interPPSCMarks = (interMarks / interTotalMarks) * 7;
+            let bachelorPPSCMarks = (bachelorCGPA / bachelorMaxCGPA) * 28;
+
+
+            // Calculate total PPSC marks
+            let totalPPSCMarks = matricPPSCMarks + interPPSCMarks + bachelorPPSCMarks;
+
+            // Display total PPSC marks
+            document.getElementById('totalPPSCMarks').innerText = totalPPSCMarks.toFixed(2);
+        }
+
+
+        function calculatePPSCMarksAnnual() {
+            // Get values from input fields
+            let matricMarks1 = parseFloat(document.getElementById('matricMarks2').value);
+            let matricTotalMarks1 = parseFloat(document.getElementById('matricTotalMarks2').value);
+            let interMarks1 = parseFloat(document.getElementById('interMarks2').value);
+            let interTotalMarks1 = parseFloat(document.getElementById('interTotalMarks2').value);
+            let bachelorCGPA1 = parseFloat(document.getElementById('bscmarks').value);
+            let bachelorMaxCGPA1 = parseFloat(document.getElementById('bsctotalmarks').value);
+            let masterMarks1 = parseFloat(document.getElementById('mamarks').value);
+            let masterMaxMarks1 = parseFloat(document.getElementById('matotalmarks').value);
+
+            // Calculate percentage marks
+            let matricPPSCMarks1 = (matricMarks1 / matricTotalMarks1) * 5;
+            let interPPSCMarks1 = (interMarks1 / interTotalMarks1) * 7;
+            let bscPPSCMarks1 = (bachelorCGPA1 / bachelorMaxCGPA1) * 11;
+            let maPPSCMarks1 = (masterMarks1 / masterMaxMarks1) * 17;
+
+
+            // Calculate total PPSC marks
+            let totalPPSCMarks2 = matricPPSCMarks1 + interPPSCMarks1 + bscPPSCMarks1 + maPPSCMarks1;
+
+            // Display total PPSC marks
+            document.getElementById('totalPPSCMarks2').innerText = totalPPSCMarks2.toFixed(2);
+        }
+    </script>
+</body>
+</html>
